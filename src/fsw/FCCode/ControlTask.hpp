@@ -32,7 +32,7 @@ class ControlTask{
     /**
      * @brief Run main method of control ControlTaskBase.
      */
-    void execute();
+    virtual void execute();
 
     /**
      * @brief Destroy the Control Task object

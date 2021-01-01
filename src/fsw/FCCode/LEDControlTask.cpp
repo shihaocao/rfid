@@ -1,8 +1,7 @@
 #include "LEDControlTask.hpp"
 
-LEDControlTask::LEDControlTask(StateFieldRegistry &registry, 
-    unsigned int offset)
-    : TimedControlTask<void>(registry, "led_control_task", offset)
+LEDControlTask::LEDControlTask()
+    : ControlTask()
     {
         pinMode(13, OUTPUT);
     }

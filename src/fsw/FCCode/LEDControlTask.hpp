@@ -2,13 +2,13 @@
 #define LED_CONTROL_TASK_HPP_
 #pragma once
 
-#include "TimedControlTask.hpp"
+#include "ControlTask.hpp"
 
 /**
 * @brief Gets inputs from the ADCS box and dumps them into the state
 * fields listed below.
 */
-class LEDControlTask : public TimedControlTask<void>
+class LEDControlTask : public ControlTask
 {
 public:
     /**
@@ -17,7 +17,7 @@ public:
      * @param registry input StateField registry
      * @param offset control task offset
      */
-    LEDControlTask(StateFieldRegistry &registry, unsigned int offset);
+    LEDControlTask();
 
     /**
     * @brief Gets inputs from the ADCS box and dumps them into the state
@@ -29,12 +29,6 @@ protected:
     /**
     * @brief Inputs to get from ADCS box.
     */
-
-    //! IMU Read Statefields, Internal float for now
-    //InternalStateField<f_vector_t> euler_angles;
-
-    //imu sensor event
-    //InternalStateField<sensors_event_t> imu_sensor_event;
 
  
 };
