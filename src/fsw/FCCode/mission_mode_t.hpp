@@ -1,5 +1,5 @@
-#ifndef mission_mode_t_enum_
-#define mission_mode_t_enum_
+#ifndef mission_mode_t_hpp_
+#define mission_mode_t_hpp_
 
 // pan.mode
 enum class mission_mode_t {

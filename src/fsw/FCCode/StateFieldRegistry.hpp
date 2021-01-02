@@ -1,13 +1,18 @@
-#ifndef _STATE_FIELD_REGISTRY_HPP
-#define _STATE_FIELD_REGISTRY_HPP
+#ifndef STATE_FIELD_REGISTRY_HPP_
+#define STATE_FIELD_REGISTRY_HPP_
 
+#include "mission_mode_t.hpp"
 namespace SFR {
     namespace MCL {
-        unsigned int ccno = 0;
-        unsigned int cycle_length = 0;
+
+        extern unsigned int ccno;
     }
 
     namespace LED {
+    }
+
+    namespace MM {
+        extern mission_mode_t mission_mode_f;
     }
 }
 

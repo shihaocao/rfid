@@ -6,14 +6,12 @@
  */
 
 #include <fsw/FCCode/MainControlLoop.hpp>
-#include <common/StateFieldRegistry.hpp>
 
 #include <core_pins.h>
 #include <wiring.h>
 
 void pan_system_setup() {
-    StateFieldRegistry registry;
-    MainControlLoop fcp(registry);
+    MainControlLoop fcp;
 
     delay(2000);
 

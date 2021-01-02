@@ -1,14 +1,9 @@
-#ifndef CONTROL_TASK_HPP_
-#define CONTROL_TASK_HPP_
+#ifndef TIMED_CONTROL_TASK_HPP_
+#define TIMED_CONTROL_TASK_HPP_
 
-#include <memory>
-#include <string>
 
-#ifdef DESKTOP
-#include <iostream>
-#else
-#include <Arduino.h>
-#endif
+
+#include "ControlTask.hpp"
 
 /**
  * @brief A control ControlTaskBase is a wrapper around any high-level ControlTaskBase that
@@ -17,7 +12,7 @@
  * This class is subclassed heavily in order to provide multiple
  * implementations of execute() for different kinds of ControlTasks.
  */
-class ControlTask{
+class TimedControlTask : public ControlTask{
   public:
     /**
      * @brief Construct a new Control ControlTaskBase object
@@ -25,7 +20,7 @@ class ControlTask{
      * @param name     Name of control ControlTaskBase
      * @param registry Pointer to state field registry
      */
-    ControlTask() {
+    TimedControlTask() {
 
     }
 
@@ -39,6 +34,10 @@ class ControlTask{
      * 
      * We need to have this destructor to avoid compilation errors.
      */
+    virtual ~TimedControlTask() = 0;
+
 };
+
+TimedControlTask::~TimedControlTask() {}
 
 #endif

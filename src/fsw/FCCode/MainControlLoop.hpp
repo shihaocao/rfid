@@ -9,7 +9,7 @@ class MainControlLoop : public ControlTask {
     /**
      * @brief Total memory use, in bytes.
      */
-    LEDControlTask LEDControlTask;
+    LEDControlTask led_ct;
 
    public:
     /*
@@ -19,11 +19,14 @@ class MainControlLoop : public ControlTask {
      * @param flow_data Metadata for telemetry flows.
      */
     MainControlLoop();
+    void timing_overhead();
 
     /**
      * @brief Processes state field commands present in the serial buffer.
      */
     void execute() override;
+
+    unsigned int nanos_to_wait();
 
 };
 
